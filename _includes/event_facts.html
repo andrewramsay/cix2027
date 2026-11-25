@@ -1,0 +1,27 @@
+{%- comment -%}
+  Dates and place from _data/event.yml; anything unset shows as TBC.
+{%- endcomment -%}
+{%- assign e = site.data.event -%}
+{%- if e.start_date and e.end_date -%}
+  {%- assign start_month = e.start_date | date: "%B %Y" -%}
+  {%- assign end_month = e.end_date | date: "%B %Y" -%}
+  {%- if start_month == end_month -%}
+    {%- capture dates -%}{{ e.start_date | date: "%-d" }}–{{ e.end_date | date: "%-d %B %Y" }}{%- endcapture -%}
+  {%- else -%}
+    {%- capture dates -%}{{ e.start_date | date: "%-d %B" }} – {{ e.end_date | date: "%-d %B %Y" }}{%- endcapture -%}
+  {%- endif -%}
+{%- else -%}
+  {%- assign dates = "Dates TBC" -%}
+{%- endif -%}
+{%- assign place_parts = "" | split: "" -%}
+{%- assign place_keys = "venue,institution,city,country" | split: "," -%}
+{%- for key in place_keys -%}
+  {%- if e[key] -%}{%- assign place_parts = place_parts | push: e[key] -%}{%- endif -%}
+{%- endfor -%}
+<ul class="list-unstyled lead event-facts">
+  <li>{% include icon.html name="calendar4-week" class="me-2" %}{{ dates }}</li>
+  <li>{% include icon.html name="geo-alt" class="me-2" %}{% if place_parts.size > 0 %}{{ place_parts | join: ", " | escape }}{% else %}Location TBC{% endif %}</li>
+  {%- if e.contact_email %}
+  <li>{% include icon.html name="envelope" class="me-2" %}<a href="mailto:{{ e.contact_email }}">{{ e.contact_email }}</a></li>
+  {%- endif %}
+</ul>

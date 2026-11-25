@@ -1,0 +1,19 @@
+# Organising committee, shown on the home page in this order.
+# Checked by scripts/validate.py against schemas/committee.schema.json.
+#
+# Fields:
+#   id           required. Lowercase letters, digits and hyphens, unique, e.g. jane-doe
+#   name         required. As it should be displayed
+#   affiliation  required
+#   role         optional, e.g. "General Chair"
+#   url          optional, personal or institutional web page
+#   photo        optional. File name inside photos/committee/ (jpg, png or webp, any size).
+#                Without one, a placeholder with the person's initials is generated.
+#   photo_focus  optional. [x, y], each 0-1: the point the square crop centres on.
+#                Default [0.5, 0.35] (a bit above the middle, where faces usually are).
+#
+# Example entry (delete once real entries are added):
+- id: jane-doe
+  name: Jane Doe
+  affiliation: University of Example
+  role: General Chair

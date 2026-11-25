@@ -1,0 +1,13 @@
+# Key facts about the event, shown on the home page.
+# Checked by scripts/validate.py against schemas/event.schema.json.
+# Leave a value empty (or delete the line) if it is not confirmed yet; the
+# page then shows "TBC".
+
+edition: 11th                 # TODO: confirm
+start_date:                   # YYYY-MM-DD, e.g. 2027-06-14
+end_date:                     # YYYY-MM-DD, on or after start_date
+venue:                        # e.g. Sir Alwyn Williams Building
+institution:                  # e.g. University of Glasgow
+city:                         # e.g. Glasgow
+country:                      # e.g. United Kingdom
+contact_email:                # e.g. s3cix2027@example.org

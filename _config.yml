@@ -1,0 +1,67 @@
+# Site
+title: "S³CIX 2027"
+description: >-
+  Summer School and Symposium on Computational Interaction
+preposition: "at"
+url: ""      # TODO: set to the custom domain once it is pointed at GitHub Pages
+baseurl: ""
+timezone: Europe/London   # TODO: change if the 2027 edition is held elsewhere
+theme: jekyll-theme-conference
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - CLAUDE.md
+  - Makefile
+  - requirements.txt
+  - vendor
+  - photos
+  - schemas
+  - scripts
+
+# Collections required by the theme (names are fixed). Empty for now.
+collections:
+  talks:
+    output: true
+    permalink: /:collection/:title/
+  speakers:
+    output: true
+    permalink: /:collection/:title/
+  rooms:
+    output: true
+    permalink: /:collection/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: talks
+    values:
+      layout: talk
+  - scope:
+      path: ""
+      type: speakers
+    values:
+      layout: speaker
+  - scope:
+      path: ""
+      type: rooms
+    values:
+      layout: room
+
+# Theme settings, see https://github.com/DigitaleGesellschaft/jekyll-theme-conference
+conference:
+  lang: en
+  # Off while there is no programme or rooms: the theme would otherwise show
+  # "schedule has no days" / "no rooms" warning bars on every page.
+  show_errors: false
+
+  navigation:
+    links:
+      - name: Call for participation
+        icon: megaphone
+        relative_url: /cfp/
+
+  talks:
+    tracks: []
+    tags: []

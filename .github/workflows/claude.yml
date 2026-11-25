@@ -1,0 +1,64 @@
+# Lets people with write access ask Claude to make changes by writing "@claude ..."
+# in an issue (title or body) or a comment on an issue or pull request.
+# Claude works on a branch and opens a pull request; the Site workflow then checks it.
+#
+# Setup (once):
+#   - Settings > Secrets and variables > Actions: add ANTHROPIC_API_KEY
+#   - Settings > Actions > General > Workflow permissions:
+#       "Read and write permissions" and "Allow GitHub Actions to create and approve pull requests"
+#   - Install the Claude GitHub App on this repo: https://github.com/apps/claude
+name: Claude
+
+on:
+  issue_comment:
+    types: [created]
+  pull_request_review_comment:
+    types: [created]
+  pull_request_review:
+    types: [submitted]
+  issues:
+    types: [opened, assigned]
+
+jobs:
+  claude:
+    # Only respond to @claude, and only from people with write access to the repo,
+    # so nobody else can spend the API budget on this public repository.
+    if: |
+      (
+        (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||
+        (github.event_name == 'pull_request_review_comment' && contains(github.event.comment.body, '@claude')) ||
+        (github.event_name == 'pull_request_review' && contains(github.event.review.body, '@claude')) ||
+        (github.event_name == 'issues' && (contains(github.event.issue.body, '@claude') || contains(github.event.issue.title, '@claude')))
+      ) && contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'),
+            github.event.comment.author_association || github.event.review.author_association || github.event.issue.author_association)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      # So Claude can run the same checks as CI before pushing
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.4"
+          bundler-cache: true
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          claude_args: |
+            --max-turns 30
+            --allowedTools "Bash(make:*),Bash(python scripts/*),Bash(python3 scripts/*),Bash(bundle exec jekyll build*),Bash(git:*),Bash(ls:*),Bash(curl -sSfL -o photos/*)"
