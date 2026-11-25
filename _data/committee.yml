@@ -53,4 +53,98 @@ roles:
 #     roles: [general-chair]
 #     photo: jane-doe.jpg
 # ---------------------------------------------------------------------------
-members: []
+members:
+  - id: per-ola-kristensson
+    name: Per Ola Kristensson
+    affiliation: University of Cambridge
+    roles: [general-chair, local-chair]
+
+  - id: john-dudley
+    name: John Dudley
+    affiliation: University of Cambridge
+    roles: [local-chair, summer-school-chair]
+    photo: john-dudley.jpg
+
+  - id: antti-oulasvirta
+    name: Antti Oulasvirta
+    affiliation: Aalto University
+    roles: [summer-school-chair]
+    photo: antti-oulasvirta.jpg
+
+  - id: john-williamson
+    name: John Williamson
+    affiliation: University of Glasgow
+    roles: [technical-programme-chair]
+    photo: john-williamson.jpg
+
+  - id: roderick-murray-smith
+    name: Roderick Murray-Smith
+    affiliation: University of Glasgow
+    roles: [technical-programme-chair]
+    photo: roderick-murray-smith.jpg
+
+  - id: sven-mayer
+    name: Sven Mayer
+    affiliation: TU Dortmund
+    roles: [publications-chair]
+
+  - id: florian-fischer
+    name: Florian Fischer
+    affiliation: University of Cambridge
+    roles: [publications-chair]
+
+  - id: andrew-ramsay
+    name: Andrew Ramsay
+    affiliation: University of Glasgow
+    roles: [web-chair]
+
+  - id: mark-colley
+    name: Mark Colley
+    affiliation: University College London
+    roles: [workshop-chair]
+    photo: mark-colley.png
+
+  - id: patrick-ebel
+    name: Patrick Ebel
+    affiliation: Hasso Plattner Institute
+    roles: [workshop-chair]
+
+  - id: anna-maria-feit
+    name: Anna Maria Feit
+    affiliation: Saarland University
+    roles: [programme-committee]
+    photo: anna-maria-feit.jpg
+
+  - id: byungjoo-lee
+    name: Byungjoo Lee
+    affiliation: Yonsei University
+    roles: [programme-committee]
+
+  - id: arthur-fleig
+    name: Arthur Fleig
+    affiliation: Leipzig University
+    roles: [programme-committee]
+    photo: arthur-fleig.jpg
+
+  - id: aini-putkonen
+    name: Aini Putkonen
+    affiliation: Aalto University
+    roles: [programme-committee]
+    photo: aini-putkonen.jpg
+
+  - id: andrew-howes
+    name: Andrew Howes
+    affiliation: University of Exeter
+    roles: [programme-committee]
+
+  - id: thomas-langerak
+    name: Thomas Langerak
+    affiliation: Aalto University
+    roles: [programme-committee]
+    photo: thomas-langerak.jpg
+
+  - id: yue-jiang
+    name: Yue Jiang
+    affiliation: University of Utah
+    roles: [programme-committee]
+    photo: yue-jiang.jpg
