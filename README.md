@@ -1,4 +1,4 @@
-# S³CIX 2027 website
+# CompInt’27 website
 
 Built with Jekyll and [jekyll-theme-conference](https://github.com/DigitaleGesellschaft/jekyll-theme-conference) 5.4.x,
 deployed to GitHub Pages on every push to `main`.

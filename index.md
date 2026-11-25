@@ -1,7 +1,5 @@
 ---
 layout: home
-header:
-  img: "s3cix_logo_text.png"
 links:
   - name: Call for papers
     relative_url: /cfp/
@@ -12,7 +10,7 @@ links:
 {% include event_facts.html %}
 
 <!-- TODO: replace with the 2027 introduction -->
-The Summer School and Symposium on Computational Interaction (S³CIX) brings together
+The ACM Conference on Computational Interaction (CompInt) brings together
 students and researchers working on computational approaches to human-computer interaction.
 
 *Computational interaction* often involves elements from machine learning, signal
