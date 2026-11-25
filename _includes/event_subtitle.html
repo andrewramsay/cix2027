@@ -1,0 +1,9 @@
+{%- comment -%}
+  Subtitle under the home page title: both events with their editions from
+  _data/event.yml (an unset edition is simply left out).
+{%- endcomment -%}
+{%- assign e = site.data.event -%}
+<p class="lead">
+  {% if e.conference_edition %}{{ e.conference_edition | escape }} {% endif %}ACM Conference on Computational Interaction (CompInt)<br>
+  &amp; {% if e.summer_school_edition %}{{ e.summer_school_edition | escape }} {% endif %}Summer School on Computational Interaction
+</p>

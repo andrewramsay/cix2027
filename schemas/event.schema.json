@@ -15,7 +15,8 @@
     }
   },
   "properties": {
-    "edition": {"type": ["string", "null"]},
+    "conference_edition": {"type": ["string", "null"]},
+    "summer_school_edition": {"type": ["string", "null"]},
     "start_date": {"type": ["string", "null"], "format": "date"},
     "end_date": {"type": ["string", "null"], "format": "date"},
     "venue": {"type": ["string", "null"]},

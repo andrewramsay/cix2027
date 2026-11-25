@@ -21,7 +21,7 @@ merge it once the checks pass, and the site updates a minute or two later.
 
 | To change | Edit |
 |---|---|
-| Dates, venue, contact email, banner photo | `_data/event.yml`, photo in `photos/site/` |
+| Editions, dates, venue, contact email, banner photo | `_data/event.yml`, photo in `photos/site/` |
 | Committee (roles and people) | `_data/committee.yml`, photos in `photos/committee/` |
 | Home page text | `index.md` |
 | Timetable | `timetable/index.md` |
