@@ -18,7 +18,6 @@
     "edition": {"type": ["string", "null"]},
     "start_date": {"type": ["string", "null"], "format": "date"},
     "end_date": {"type": ["string", "null"], "format": "date"},
-    "summer_school_date": {"type": ["string", "null"], "format": "date"},
     "venue": {"type": ["string", "null"]},
     "institution": {"type": ["string", "null"]},
     "city": {"type": ["string", "null"]},
