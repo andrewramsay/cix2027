@@ -69,6 +69,7 @@ jobs:
           anthropic_federation_rule_id: ${{ vars.ANTHROPIC_FEDERATION_RULE_ID }}
           anthropic_organization_id: ${{ vars.ANTHROPIC_ORGANIZATION_ID }}
           anthropic_workspace_id: ${{ vars.ANTHROPIC_WORKSPACE_ID }}
+          show_full_output: true 
           claude_args: |
             --max-turns 30
             --allowedTools "Bash(make:*),Bash(python scripts/*),Bash(python3 scripts/*),Bash(bundle exec jekyll build*),Bash(git:*),Bash(ls:*),Bash(file:*),Bash(curl:*)"
