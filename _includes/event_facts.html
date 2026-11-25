@@ -19,10 +19,7 @@
   {%- if e[key] -%}{%- assign place_parts = place_parts | push: e[key] -%}{%- endif -%}
 {%- endfor -%}
 <ul class="list-unstyled lead event-facts">
-  <li>{% include icon.html name="calendar4-week" class="me-2" %}{{ dates }}</li>
-  {%- if e.summer_school_date %}
-  <li>{% include icon.html name="mortarboard" class="me-2" %}Summer school: {{ e.summer_school_date | date: "%A %-d %B" }}</li>
-  {%- endif %}
+  <li>{% include icon.html name="calendar4-week" class="me-2" %}{{ dates }} <a class="small" href="{{ '/timetable/' | relative_url }}">(provisional timetable)</a></li>
   <li>{% include icon.html name="geo-alt" class="me-2" %}{% if place_parts.size > 0 %}{{ place_parts | join: ", " | escape }}{% else %}Location TBC{% endif %}</li>
   {%- if e.contact_email %}
   <li>{% include icon.html name="envelope" class="me-2" %}<a href="mailto:{{ e.contact_email }}">{{ e.contact_email }}</a></li>
