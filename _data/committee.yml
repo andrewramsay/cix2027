@@ -32,7 +32,6 @@ roles:
     title: Workshop Chairs
   - id: programme-committee
     title: Programme Committee
-    style: list
 
 # ---------------------------------------------------------------------------
 # People. Within each role they are listed in the order given here.

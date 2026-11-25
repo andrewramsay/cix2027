@@ -26,7 +26,7 @@ from common import DATA, IMAGES, PHOTOS, load_yaml, rel
 
 OUT = IMAGES / "generated"
 
-# Output sizes in pixels. Committee photos show at 160 CSS px, so this covers 2x screens.
+# Output sizes in pixels. Committee photos show at 96 CSS px, so this covers 2x (and 3x) screens.
 COMMITTEE_SIZE = 320
 HEADER_WIDTH, HEADER_RATIO = 1920, 12 / 5
 JPEG_QUALITY = 85
