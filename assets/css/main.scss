@@ -22,10 +22,10 @@
 }
 {% endif %}
 
+// Headshot beside the name and affiliation on the committee page
 .committee-photo {
-  width: 160px;
-  max-width: 100%;
-  height: auto;
+  width: 96px;
+  height: 96px;
   aspect-ratio: 1;
   object-fit: cover;
 }
