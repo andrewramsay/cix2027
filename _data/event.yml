@@ -6,7 +6,7 @@
 edition: 11th                     # TODO: confirm
 start_date: 2027-06-30            # symposium, YYYY-MM-DD
 end_date: 2027-07-02              # on or after start_date
-summer_school_date:               # TODO: the extra summer school day, YYYY-MM-DD
+summer_school_date: 2027-07-03     # the day after the symposium
 venue:                            # e.g. a building or college
 institution: University of Cambridge
 city: Cambridge
