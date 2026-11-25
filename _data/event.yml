@@ -3,7 +3,7 @@
 # Leave a value empty (or delete the line) if it is not confirmed yet; the
 # page then shows "TBC".
 
-edition: 11th                     # TODO: confirm
+edition: 1st                      # CompInt and summer school, both 1st edition
 start_date: 2027-06-30            # first day of the whole event, YYYY-MM-DD
 end_date: 2027-07-03              # last day of the whole event, on or after start_date
 venue:                            # e.g. a building or college
