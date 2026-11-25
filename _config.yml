@@ -1,7 +1,7 @@
 # Site
-title: "S³CIX 2027"
+title: "CompInt’27"
 description: >-
-  Summer School and Symposium on Computational Interaction
+  ACM Conference on Computational Interaction (CompInt)
 preposition: "at"
 url: ""      # TODO: set to the custom domain once it is pointed at GitHub Pages
 baseurl: ""

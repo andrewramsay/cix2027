@@ -1,6 +1,7 @@
-# S³CIX 2027 website
+# CompInt’27 website
 
-Jekyll site for the S³CIX 2027 summer school and symposium, built on the
+Jekyll site for CompInt’27, the ACM Conference on Computational Interaction
+(held with the Summer School on Computational Interaction), built on the
 [jekyll-theme-conference](https://github.com/DigitaleGesellschaft/jekyll-theme-conference)
 gem (pinned to 5.4.x, Bootstrap 5) and deployed to GitHub Pages by `.github/workflows/site.yml`.
 
@@ -9,7 +10,7 @@ Keep explanations short and non-technical, and always say what you changed.
 
 ## Current scope
 
-A minimal pre-announcement site: a home page (banner photo, logo, dates/location,
+A minimal pre-announcement site: a home page (banner photo, dates/location,
 intro text), a committee page, and placeholder timetable and call-for-papers pages
 whose text the organisers write themselves. There is deliberately no programme,
 talks, speakers or rooms yet; the theme's `_talks/`, `_speakers/`,
