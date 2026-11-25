@@ -5,7 +5,7 @@ description: >-
 preposition: "at"
 url: ""      # TODO: set to the custom domain once it is pointed at GitHub Pages
 baseurl: ""
-timezone: Europe/London   # TODO: change if the 2027 edition is held elsewhere
+timezone: Europe/London
 theme: jekyll-theme-conference
 
 exclude:
@@ -58,8 +58,11 @@ conference:
 
   navigation:
     links:
-      - name: Call for participation
-        icon: megaphone
+      - name: Committee
+        relative_url: /committee/
+      - name: Timetable
+        relative_url: /timetable/
+      - name: Call for papers
         relative_url: /cfp/
 
   talks:

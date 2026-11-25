@@ -1,13 +1,21 @@
 # Key facts about the event, shown on the home page.
 # Checked by scripts/validate.py against schemas/event.schema.json.
 # Leave a value empty (or delete the line) if it is not confirmed yet; the
-# page then shows "TBC".
+# page then shows "TBC" (or, for the summer school, nothing).
 
-edition: 11th                 # TODO: confirm
-start_date:                   # YYYY-MM-DD, e.g. 2027-06-14
-end_date:                     # YYYY-MM-DD, on or after start_date
-venue:                        # e.g. Sir Alwyn Williams Building
-institution:                  # e.g. University of Glasgow
-city:                         # e.g. Glasgow
-country:                      # e.g. United Kingdom
-contact_email:                # e.g. s3cix2027@example.org
+edition: 11th                     # TODO: confirm
+start_date: 2027-06-30            # symposium, YYYY-MM-DD
+end_date: 2027-07-02              # on or after start_date
+summer_school_date:               # TODO: the extra summer school day, YYYY-MM-DD
+venue:                            # e.g. a building or college
+institution: University of Cambridge
+city: Cambridge
+country: United Kingdom
+contact_email:                    # e.g. s3cix2027@example.org
+
+# Banner photo at the top of the home page. The original goes in photos/site/;
+# the build crops it to a 12:5 banner. focus is the [x, y] point (each 0-1)
+# the crop centres on: raise y to keep more of the bottom of the photo.
+header_image:
+  photo: header.jpg
+  focus: [0.5, 0.95]

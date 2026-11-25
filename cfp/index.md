@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Call for participation
+title: Call for papers
 ---
 
-<!-- TODO: call for participation text -->
-The call for participation for S³CIX 2027 will be published here soon.
+<!-- TODO: call for papers text -->
+The call for papers will be published here soon.

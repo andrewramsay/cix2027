@@ -3,6 +3,25 @@
 
 // Custom styles, loaded after the theme's bundle.
 
+// Banner photo across the top of the home page's header box, without
+// overriding the theme's home layout. The image is generated from
+// photos/site/ by scripts/process_images.py (see header_image in _data/event.yml).
+// The negative margins cancel the box's padding (Bootstrap p-4 p-md-5).
+{% if site.data.event.header_image %}
+.home-header::before {
+  content: "";
+  display: block;
+  aspect-ratio: 12 / 5;
+  margin: -1.5rem -1.5rem 1.5rem;
+  background: url("{{ site.baseurl }}/assets/images/generated/header.jpg") center / cover no-repeat;
+  border-radius: var(--bs-border-radius) var(--bs-border-radius) 0 0;
+
+  @media (min-width: 768px) {
+    margin: -3rem -3rem 2rem;
+  }
+}
+{% endif %}
+
 .committee-photo {
   width: 160px;
   max-width: 100%;

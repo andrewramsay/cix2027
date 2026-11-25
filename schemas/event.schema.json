@@ -3,14 +3,35 @@
   "title": "_data/event.yml",
   "type": "object",
   "additionalProperties": false,
+  "$defs": {
+    "focus": {
+      "type": "array",
+      "prefixItems": [
+        {"type": "number", "minimum": 0, "maximum": 1},
+        {"type": "number", "minimum": 0, "maximum": 1}
+      ],
+      "minItems": 2,
+      "maxItems": 2
+    }
+  },
   "properties": {
     "edition": {"type": ["string", "null"]},
     "start_date": {"type": ["string", "null"], "format": "date"},
     "end_date": {"type": ["string", "null"], "format": "date"},
+    "summer_school_date": {"type": ["string", "null"], "format": "date"},
     "venue": {"type": ["string", "null"]},
     "institution": {"type": ["string", "null"]},
     "city": {"type": ["string", "null"]},
     "country": {"type": ["string", "null"]},
-    "contact_email": {"type": ["string", "null"], "format": "email"}
+    "contact_email": {"type": ["string", "null"], "format": "email"},
+    "header_image": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["photo"],
+      "properties": {
+        "photo": {"type": "string", "pattern": "^[^/\\\\]+$"},
+        "focus": {"$ref": "#/$defs/focus"}
+      }
+    }
   }
 }

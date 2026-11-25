@@ -9,9 +9,10 @@ Keep explanations short and non-technical, and always say what you changed.
 
 ## Current scope
 
-A minimal pre-announcement site: a home page (logo, dates/location, intro text,
-organising committee) and a call-for-participation page. There is deliberately
-no programme, talks, speakers or rooms yet; the theme's `_talks/`, `_speakers/`,
+A minimal pre-announcement site: a home page (banner photo, logo, dates/location,
+intro text), a committee page, and placeholder timetable and call-for-papers pages
+whose text the organisers write themselves. There is deliberately no programme,
+talks, speakers or rooms yet; the theme's `_talks/`, `_speakers/`,
 `_rooms/` and `_data/program.yml` exist only because the theme requires them.
 Don't add those features unless asked.
 
@@ -19,26 +20,32 @@ Don't add those features unless asked.
 
 | What | File |
 |---|---|
-| Dates, venue, city, contact email | `_data/event.yml` (schema: `schemas/event.schema.json`) |
-| Organising committee | `_data/committee.yml` (schema: `schemas/committee.schema.json`) |
-| Committee photos, originals | `photos/committee/` |
+| Dates, summer school date, venue, contact email, banner photo | `_data/event.yml` (schema: `schemas/event.schema.json`) |
+| Committee roles and members | `_data/committee.yml` (schema: `schemas/committee.schema.json`) |
+| Photo originals | `photos/committee/`, `photos/site/` (banner) |
 | Home page text | `index.md` |
-| Call for participation | `cfp/index.md` |
+| Committee page | `committee/index.md`, rendered by `_includes/committee.html` |
+| Timetable | `timetable/index.md` |
+| Call for papers | `cfp/index.md` |
 | Navigation bar, site title, theme settings | `_config.yml` |
-| Custom CSS | `assets/css/main.scss` |
-| Home page snippets | `_includes/event_facts.html`, `_includes/committee.html` |
+| Custom CSS (incl. the home banner) | `assets/css/main.scss` |
 
-Generated, never edit or commit: `assets/images/committee/` (made by
+Generated, never edit or commit: `assets/images/generated/` (made by
 `scripts/process_images.py` from `photos/`), `_site/`.
+
+Skills: `add-committee-member`, `import-committee` (from a spreadsheet/CSV),
+`update-event-details`.
 
 ## Rules
 
 - Structured facts go in `_data/*.yml`, not hard-coded into pages. Only add a
   field after adding it to the matching schema in `schemas/`.
 - Committee `id`s are lowercase-hyphenated (`jane-doe`) and must stay stable:
-  the generated photo is named after the id.
-- Photos: put the original, as received, in `photos/committee/` and reference
-  it by file name. Never resize by hand or put photos in `assets/images/committee/`.
+  the generated photo is named after the id. Members refer to roles by role id.
+- The text of the call for papers and timetable is written by the organisers.
+  Only change its wording when asked; formatting fixes are fine.
+- Photos: put the original, as received, in `photos/...` and reference it by
+  file name. Never resize by hand or put photos in `assets/images/generated/`.
 - Don't override theme layouts (`_layouts/`) unless asked; prefer includes and
   page content. If you must, copy the file from the 5.4.x gem and keep the diff small.
 - Icons are Bootstrap Icons via `{% include icon.html name="..." %}`, not Font Awesome.

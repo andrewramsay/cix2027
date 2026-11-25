@@ -1,19 +1,56 @@
-# Organising committee, shown on the home page in this order.
+# Committee, shown on the /committee/ page.
 # Checked by scripts/validate.py against schemas/committee.schema.json.
-#
-# Fields:
-#   id           required. Lowercase letters, digits and hyphens, unique, e.g. jane-doe
+
+# ---------------------------------------------------------------------------
+# Roles, in the order they appear on the page.
+#   id        required. Lowercase-hyphenated, referenced from members' roles
+#   title     required. Section heading, as displayed
+#   multiple  optional, default true. false = at most one person may hold it
+#   style     optional. "cards" (default: photo, name, affiliation) or
+#             "list" (compact names + affiliations, no photos)
+# A role with nobody in it yet is not shown.
+# ---------------------------------------------------------------------------
+roles:
+  - id: general-chair
+    title: General Chair
+    multiple: false
+  - id: local-chair
+    title: Local Chairs
+  - id: summer-school-chair
+    title: Summer School Chairs
+  - id: technical-programme-chair
+    title: Technical Programme Chairs
+  - id: session-chair
+    title: Session Chair
+    multiple: false
+  - id: publications-chair
+    title: Publications Chairs
+  - id: web-chair
+    title: Web Chair
+    multiple: false
+  - id: workshop-chair
+    title: Workshop Chairs
+  - id: programme-committee
+    title: Programme Committee
+    style: list
+
+# ---------------------------------------------------------------------------
+# People. Within each role they are listed in the order given here.
+#   id           required. Lowercase-hyphenated from the name, unique, never changed
 #   name         required. As it should be displayed
 #   affiliation  required
-#   role         optional, e.g. "General Chair"
-#   url          optional, personal or institutional web page
-#   photo        optional. File name inside photos/committee/ (jpg, png or webp, any size).
-#                Without one, a placeholder with the person's initials is generated.
-#   photo_focus  optional. [x, y], each 0-1: the point the square crop centres on.
-#                Default [0.5, 0.35] (a bit above the middle, where faces usually are).
+#   roles        required. One or more role ids from the list above
+#   url          optional. Personal or institutional web page
+#   photo        optional. File name in photos/committee/ (jpg, png or webp, any size).
+#                Without one, a placeholder with the person's initials is shown.
+#   photo_focus  optional. [x, y], each 0-1: where the square crop centres.
+#                Default [0.5, 0.35], a bit above the middle, where faces usually are.
 #
-# Example entry (delete once real entries are added):
-- id: jane-doe
-  name: Jane Doe
-  affiliation: University of Example
-  role: General Chair
+# Example:
+#   - id: jane-doe
+#     name: Jane Doe
+#     affiliation: University of Example
+#     roles: [general-chair]
+#     photo: jane-doe.jpg
+# ---------------------------------------------------------------------------
+members: []

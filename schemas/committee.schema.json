@@ -1,26 +1,52 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "_data/committee.yml",
-  "type": "array",
-  "items": {
-    "type": "object",
-    "additionalProperties": false,
-    "required": ["id", "name", "affiliation"],
-    "properties": {
-      "id": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"},
-      "name": {"type": "string", "minLength": 1},
-      "affiliation": {"type": "string", "minLength": 1},
-      "role": {"type": "string", "minLength": 1},
-      "url": {"type": "string", "pattern": "^https?://"},
-      "photo": {"type": "string", "pattern": "^[^/\\\\]+$"},
-      "photo_focus": {
-        "type": "array",
-        "prefixItems": [
-          {"type": "number", "minimum": 0, "maximum": 1},
-          {"type": "number", "minimum": 0, "maximum": 1}
-        ],
-        "minItems": 2,
-        "maxItems": 2
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["roles", "members"],
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"},
+    "focus": {
+      "type": "array",
+      "prefixItems": [
+        {"type": "number", "minimum": 0, "maximum": 1},
+        {"type": "number", "minimum": 0, "maximum": 1}
+      ],
+      "minItems": 2,
+      "maxItems": 2
+    }
+  },
+  "properties": {
+    "roles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "title"],
+        "properties": {
+          "id": {"$ref": "#/$defs/id"},
+          "title": {"type": "string", "minLength": 1},
+          "multiple": {"type": "boolean"},
+          "style": {"enum": ["cards", "list"]}
+        }
+      }
+    },
+    "members": {
+      "type": ["array", "null"],
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "affiliation", "roles"],
+        "properties": {
+          "id": {"$ref": "#/$defs/id"},
+          "name": {"type": "string", "minLength": 1},
+          "affiliation": {"type": "string", "minLength": 1},
+          "roles": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "url": {"type": "string", "pattern": "^https?://"},
+          "photo": {"type": "string", "pattern": "^[^/\\\\]+$"},
+          "photo_focus": {"$ref": "#/$defs/focus"}
+        }
       }
     }
   }

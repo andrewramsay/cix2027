@@ -3,8 +3,10 @@ layout: home
 header:
   img: "s3cix_logo_text.png"
 links:
-  - name: Call for participation
+  - name: Call for papers
     relative_url: /cfp/
+  - name: Committee
+    relative_url: /committee/
 ---
 
 {% include event_facts.html %}
@@ -16,7 +18,3 @@ students and researchers working on computational approaches to human-computer i
 *Computational interaction* often involves elements from machine learning, signal
 processing, information theory, optimisation, inference, control theory and formal
 modelling.
-
-## Organising committee
-
-{% include committee.html %}

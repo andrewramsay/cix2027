@@ -1,26 +1,44 @@
 {%- comment -%}
-  Organising committee grid, from _data/committee.yml.
-  Photos are generated into assets/images/committee/<id>.jpg by
-  scripts/process_images.py (a placeholder when there is no photo).
+  Committee sections from _data/committee.yml, one per role in the order the
+  roles are listed. Roles nobody holds yet are skipped. Photos are generated
+  into assets/images/generated/committee/<id>.jpg by scripts/process_images.py.
 {%- endcomment -%}
-{%- assign members = site.data.committee -%}
-{%- if members and members.size > 0 -%}
-<div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 g-4 committee">
-  {%- for m in members %}
-  <div class="col text-center committee-member">
-    <img src="{{ site.baseurl }}/assets/images/committee/{{ m.id }}.jpg" class="committee-photo rounded-circle mb-2" width="160" height="160" loading="lazy" alt="{{ m.name | escape }}">
-    <div class="fw-semibold">
-      {%- if m.url -%}
-        <a href="{{ m.url }}" class="text-reset">{{ m.name | escape }}</a>
-      {%- else -%}
-        {{ m.name | escape }}
-      {%- endif -%}
+{%- assign committee = site.data.committee -%}
+{%- assign members = committee.members -%}
+{%- assign shown = 0 -%}
+{%- for role in committee.roles -%}
+  {%- assign holders = members | where_exp: "m", "m.roles contains role.id" -%}
+  {%- assign n_holders = holders | size -%}
+  {%- if n_holders == 0 -%}{%- continue -%}{%- endif -%}
+  {%- assign shown = shown | plus: 1 %}
+<section class="committee-role mb-5" id="{{ role.id }}">
+  <h2 class="h3 mb-4">{{ role.title | escape }}</h2>
+  {%- if role.style == "list" %}
+  <ul class="list-unstyled row row-cols-1 row-cols-md-2 row-cols-lg-3 g-2 committee-list">
+    {%- for m in holders %}
+    <li class="col">
+      <span class="fw-semibold">
+        {%- if m.url -%}<a href="{{ m.url }}" class="text-reset">{{ m.name | escape }}</a>{%- else -%}{{ m.name | escape }}{%- endif -%}
+      </span><br>
+      <span class="small text-body-secondary">{{ m.affiliation | escape }}</span>
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- else %}
+  <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 g-4">
+    {%- for m in holders %}
+    <div class="col text-center committee-member">
+      <img src="{{ site.baseurl }}/assets/images/generated/committee/{{ m.id }}.jpg" class="committee-photo rounded-circle mb-2" width="160" height="160" loading="lazy" alt="{{ m.name | escape }}">
+      <div class="fw-semibold">
+        {%- if m.url -%}<a href="{{ m.url }}" class="text-reset">{{ m.name | escape }}</a>{%- else -%}{{ m.name | escape }}{%- endif -%}
+      </div>
+      <div class="small text-body-secondary">{{ m.affiliation | escape }}</div>
     </div>
-    {%- if m.role %}
-    <div class="small text-body-secondary">{{ m.role | escape }}</div>
-    {%- endif %}
-    <div class="small">{{ m.affiliation | escape }}</div>
+    {%- endfor %}
   </div>
-  {%- endfor %}
-</div>
+  {%- endif %}
+</section>
+{%- endfor -%}
+{%- if shown == 0 %}
+<p class="lead">The committee will be announced soon.</p>
 {%- endif -%}
