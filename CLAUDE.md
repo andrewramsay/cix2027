@@ -21,7 +21,7 @@ Don't add those features unless asked.
 
 | What | File |
 |---|---|
-| Dates, summer school date, venue, contact email, banner photo | `_data/event.yml` (schema: `schemas/event.schema.json`) |
+| Conference & summer school editions, dates, venue, contact email, banner photo | `_data/event.yml` (schema: `schemas/event.schema.json`) |
 | Committee roles and members | `_data/committee.yml` (schema: `schemas/committee.schema.json`) |
 | Photo originals | `photos/committee/`, `photos/site/` (banner) |
 | Home page text | `index.md` |

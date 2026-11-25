@@ -1,12 +1,13 @@
 ---
 name: update-event-details
-description: Change the event's dates, venue, city, contact email or home page banner photo. Use when someone confirms or changes when or where the event takes place, the contact address, or the header image.
+description: Change the event's editions, dates, venue, city, contact email or home page banner photo. Use when someone confirms or changes when or where the event takes place, the contact address, or the header image.
 ---
 
 # Update event details
 
-1. Edit `_data/event.yml`. Dates are `YYYY-MM-DD`; `end_date` must not be before
-   `start_date`. Leave a field empty rather than guessing: it then shows as "TBC".
+1. Edit `_data/event.yml`. `conference_edition` and `summer_school_edition`
+   (e.g. `1st`, `11th`) appear under the home page title. Dates are
+   `YYYY-MM-DD`; `end_date` must not be before `start_date`. Leave a field empty rather than guessing: it then shows as "TBC".
 2. If the dates or place also appear in prose (`index.md`, `cfp/index.md`,
    `timetable/index.md`), update those mentions too so nothing contradicts the
    facts block. Search for the old values with grep.

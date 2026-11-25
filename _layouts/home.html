@@ -1,0 +1,34 @@
+{% include header.html %}
+
+  <div class="home-header bg-body-tertiary rounded p-4 p-md-5 mb-4">
+    <h1 class="display-3 text-break">
+      {% if page.header.img %}
+        {%- comment -%} One image, the dark variant only downloaded in dark mode {%- endcomment %}
+        <picture>
+          {%- if page.header.img_dark %}
+          <source srcset="{{ page.header.img_dark | prepend: '/assets/images/' | prepend: site.baseurl }}" media="(prefers-color-scheme: dark)" />
+          {%- endif %}
+          <img src="{{ page.header.img | prepend: '/assets/images/' | prepend: site.baseurl }}" class="home-header-img" alt="{{ edition_title | escape }}" />
+        </picture>
+      {% elsif page.title %}
+        {{ page.title | escape }}
+      {% else %}
+        {{ edition_title | escape }}
+      {% endif %}
+    </h1>
+    {%- comment -%} CompInt: subtitle with both editions from _data/event.yml {%- endcomment %}
+    {% include event_subtitle.html %}
+
+    <hr class="my-4">
+
+    {{ content }}
+
+    {% if page.links %}
+      <div class="lead d-print-none">
+      {% include show_link_buttons.html links=page.links class="btn btn-outline-primary btn-lg mt-2 ms-1" id="main" %}
+      </div>
+    {% endif %}
+
+  </div>
+
+{% include footer.html %}
