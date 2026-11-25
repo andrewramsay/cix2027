@@ -4,9 +4,10 @@
 # page then shows "TBC" (or, for the summer school, nothing).
 
 edition: 11th                     # TODO: confirm
-start_date: 2027-06-30            # symposium, YYYY-MM-DD
-end_date: 2027-07-02              # on or after start_date
-summer_school_date: 2027-07-03     # the day after the symposium
+start_date: 2027-06-30            # first day of the whole event, YYYY-MM-DD
+end_date: 2027-07-03              # last day of the whole event, on or after start_date
+summer_school_date:               # only for a separate one-day summer school; leave
+                                  # empty while it runs alongside the symposium
 venue:                            # e.g. a building or college
 institution: University of Cambridge
 city: Cambridge
