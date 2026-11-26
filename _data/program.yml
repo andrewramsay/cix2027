@@ -1,2 +1,136 @@
-# The programme is not published yet. Leave this as an empty list until it is.
-days: []
+# The timetable shown on /timetable/. Each day lists its columns (rooms, see _rooms/),
+# and each column lists its blocks (talks, see _talks/) in time order.
+# Block names must match the `name` in a _talks/ file; colours come from their track.
+days:
+  - name: Wed 30 June
+    abbr: We
+    date: 2027-06-30
+    rooms:
+      - name: Conference
+        talks:
+          - name: Keynote
+            time_start: "09:00"
+            time_end: "10:00"
+          - name: Talks
+            time_start: "10:00"
+            time_end: "12:00"
+          - name: Lunch
+            time_start: "12:00"
+            time_end: "13:00"
+          - name: Talks
+            time_start: "13:00"
+            time_end: "15:00"
+          - name: Workshop / review
+            time_start: "15:00"
+            time_end: "16:30"
+      - name: Summer school
+        talks:
+          - name: Keynote
+            time_start: "09:00"
+            time_end: "10:00"
+          - name: Teaching
+            time_start: "10:00"
+            time_end: "12:00"
+          - name: Lunch
+            time_start: "12:00"
+            time_end: "13:00"
+          - name: Teaching
+            time_start: "13:00"
+            time_end: "15:00"
+          - name: Teaching
+            time_start: "15:00"
+            time_end: "16:30"
+
+  - name: Thu 1 July
+    abbr: Th
+    date: 2027-07-01
+    rooms:
+      - name: Conference
+        talks:
+          - name: Keynote
+            time_start: "09:00"
+            time_end: "10:00"
+          - name: Talks
+            time_start: "10:00"
+            time_end: "12:00"
+          - name: Lunch
+            time_start: "12:00"
+            time_end: "13:00"
+          - name: Talks
+            time_start: "13:00"
+            time_end: "15:00"
+          - name: Workshop / review
+            time_start: "15:00"
+            time_end: "16:30"
+      - name: Summer school
+        talks:
+          - name: Keynote
+            time_start: "09:00"
+            time_end: "10:00"
+          - name: Teaching
+            time_start: "10:00"
+            time_end: "12:00"
+          - name: Lunch
+            time_start: "12:00"
+            time_end: "13:00"
+          - name: Teaching
+            time_start: "13:00"
+            time_end: "15:00"
+          - name: Teaching
+            time_start: "15:00"
+            time_end: "16:30"
+
+  - name: Fri 2 July
+    abbr: Fr
+    date: 2027-07-02
+    rooms:
+      - name: Conference
+        talks:
+          - name: Keynote
+            time_start: "09:00"
+            time_end: "10:00"
+          - name: Talks
+            time_start: "10:00"
+            time_end: "12:00"
+          - name: Lunch
+            time_start: "12:00"
+            time_end: "13:00"
+          - name: Talks
+            time_start: "13:00"
+            time_end: "15:00"
+          - name: Workshop / review
+            time_start: "15:00"
+            time_end: "16:30"
+      - name: Summer school
+        talks:
+          - name: Keynote
+            time_start: "09:00"
+            time_end: "10:00"
+          - name: Teaching
+            time_start: "10:00"
+            time_end: "12:00"
+          - name: Lunch
+            time_start: "12:00"
+            time_end: "13:00"
+          - name: Teaching
+            time_start: "13:00"
+            time_end: "15:00"
+          - name: Teaching
+            time_start: "15:00"
+            time_end: "16:30"
+
+  - name: Sat 3 July
+    abbr: Sa
+    date: 2027-07-03
+    rooms:
+      - name: Summer school
+        talks:
+          - name: Teaching
+            time_start: "09:00"
+            time_end: "12:00"
+          - name: Lunch
+            time_start: "12:00"
+            time_end: "13:00"
+          - name: Teaching
+            time_start: "13:00"
+            time_end: "16:30"

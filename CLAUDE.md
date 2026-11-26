@@ -11,11 +11,16 @@ Keep explanations short and non-technical, and always say what you changed.
 ## Current scope
 
 A minimal pre-announcement site: a home page (banner photo, dates/location,
-intro text), a committee page, and placeholder timetable and call-for-papers pages
-whose text the organisers write themselves. There is deliberately no programme,
-talks, speakers or rooms yet; the theme's `_talks/`, `_speakers/`,
-`_rooms/` and `_data/program.yml` exist only because the theme requires them.
-Don't add those features unless asked.
+intro text), a committee page, a call-for-papers page whose text the organisers
+write themselves, and a timetable page showing the outline schedule as a grid.
+
+The timetable uses the theme's programme feature in a simplified way: the two
+columns (Conference, Summer school) are "rooms" in `_rooms/`, and each kind of
+block (Keynote, Talks, Teaching, …) is one "talk" in `_talks/`, reused in every
+time slot it occupies. All are `hide: true`, so they have no pages of their own.
+Block colours and the legend are "tracks" in `_config.yml`. There are
+deliberately no individual talks or speakers yet (`_speakers/` exists only
+because the theme requires it); don't add them unless asked.
 
 ## Where things live
 
@@ -26,7 +31,11 @@ Don't add those features unless asked.
 | Photo originals | `photos/committee/`, `photos/site/` (banner) |
 | Home page text | `index.md` |
 | Committee page | `committee/index.md`, rendered by `_includes/committee.html` |
-| Timetable | `timetable/index.md` |
+| Timetable intro text and grid settings | `timetable/index.md` |
+| Timetable: days (tab labels, e.g. "Wed 30 June"), columns and times of each block | `_data/program.yml` |
+| Start time shown in each timetable block (copy of a theme include) | `_includes/show_talk.html` |
+| Timetable blocks (name, colour) and columns | `_talks/`, `_rooms/` |
+| Timetable colours and legend | `conference.talks.tracks` in `_config.yml` |
 | Call for papers | `cfp/index.md` |
 | Navigation bar, site title, theme settings | `_config.yml` |
 | Custom CSS (incl. the home banner) | `assets/css/main.scss` |

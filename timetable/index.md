@@ -1,6 +1,8 @@
 ---
-layout: page
+layout: program
 title: Timetable
+# Grid settings; the timetable itself is in _data/program.yml
+time_steps: 30
 ---
 
 CompInt’27 runs from **Wednesday 30 June to Saturday 3 July 2027**.

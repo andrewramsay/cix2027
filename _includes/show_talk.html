@@ -1,0 +1,14 @@
+{%- comment -%}
+  Copy of the theme's (5.4.x) _includes/show_talk.html. Only change: on the
+  timetable, the start time is shown in bold above each block's name, instead of
+  in the time column (hidden in assets/css/main.scss). Screen readers already get
+  the time from the theme, so it is hidden from them here.
+{%- endcomment -%}
+{%- if page.layout == 'program' -%}
+  <strong class="d-block" aria-hidden="true">{{ talk_start_hour }}:{% if talk_start_min_exact < 10 %}0{% endif %}{{ talk_start_min_exact }}</strong>
+{%- endif -%}
+{%- if talk.hide -%}
+  <span {% if talk.lang %}lang="{{ talk.lang | escape }}" {% endif %}class="talk-title">{{ talk.name | escape }}</span>
+{%- else -%}
+  <a {% if talk.lang %}lang="{{ talk.lang | escape }}" {% endif %}class="talk-title text-reset link-underline-{{ track_color }} link-underline-opacity-0 link-underline-opacity-100-hover" href="{{ talk.url | prepend: site.baseurl }}">{{ talk.name | escape }}</a>
+{%- endif -%}

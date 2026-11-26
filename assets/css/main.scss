@@ -86,3 +86,13 @@
     border-radius: var(--bs-border-radius);
   }
 }
+
+// Timetable: no time column; each block shows its own start time instead
+// (see _includes/show_talk.html)
+.program-table .program-time {
+  display: none;
+}
+
+.program-table-container {
+  scroll-padding-left: 0;
+}
