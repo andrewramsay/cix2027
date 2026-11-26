@@ -19,10 +19,10 @@ from __future__ import annotations
 
 import hashlib
 import sys
+from pathlib import Path
 
+from common import IMAGES, PHOTOS, load_committee, load_event, rel
 from PIL import Image, ImageDraw, ImageFont, ImageOps
-
-from common import DATA, IMAGES, PHOTOS, load_yaml, rel
 
 OUT = IMAGES / "generated"
 
@@ -34,14 +34,25 @@ DEFAULT_FOCUS = (0.5, 0.35)
 DEFAULT_HEADER_FOCUS = (0.5, 0.5)
 
 
-def save_jpeg(img: Image.Image, dest) -> None:
+def to_focus(
+    value: list[float] | None, default: tuple[float, float]
+) -> tuple[float, float]:
+    """A [x, y] focus from the data files (the schemas require exactly two numbers)."""
+    return (value[0], value[1]) if value is not None else default
+
+
+def save_jpeg(img: Image.Image, dest: Path) -> None:
     dest.parent.mkdir(parents=True, exist_ok=True)
-    img.convert("RGB").save(dest, "JPEG", quality=JPEG_QUALITY, optimize=True, progressive=True)
+    img.convert("RGB").save(
+        dest, "JPEG", quality=JPEG_QUALITY, optimize=True, progressive=True
+    )
 
 
-def open_rgb(src) -> Image.Image:
+def open_rgb(src: Path) -> Image.Image:
     with Image.open(src) as im:
-        im = ImageOps.exif_transpose(im)  # respect camera orientation, then EXIF is dropped on save
+        im = ImageOps.exif_transpose(
+            im
+        )  # respect camera orientation, then EXIF is dropped on save
         if im.mode in ("RGBA", "LA", "P"):
             im = im.convert("RGBA")
             bg = Image.new("RGBA", im.size, (255, 255, 255, 255))
@@ -49,13 +60,21 @@ def open_rgb(src) -> Image.Image:
         return im.convert("RGB")
 
 
-def crop_photo(src, size: tuple[int, int], focus) -> Image.Image:
-    return ImageOps.fit(open_rgb(src), size, method=Image.Resampling.LANCZOS, centering=focus)
+def crop_photo(
+    src: Path, size: tuple[int, int], focus: tuple[float, float]
+) -> Image.Image:
+    return ImageOps.fit(
+        open_rgb(src), size, method=Image.Resampling.LANCZOS, centering=focus
+    )
 
 
 def initials_placeholder(name: str, size: int) -> Image.Image:
     words = [w for w in name.replace("-", " ").split() if w[:1].isalpha()]
-    initials = (words[0][0] + (words[-1][0] if len(words) > 1 else "")).upper() if words else "?"
+    initials = (
+        (words[0][0] + (words[-1][0] if len(words) > 1 else "")).upper()
+        if len(words) > 0
+        else "?"
+    )
     # Stable, muted background colour per name
     h = int(hashlib.sha1(name.encode()).hexdigest(), 16)
     bg = tuple(110 + (h >> s) % 80 for s in (0, 8, 16))
@@ -67,30 +86,39 @@ def initials_placeholder(name: str, size: int) -> Image.Image:
 
 
 def header() -> int:
-    spec = (load_yaml(DATA / "event.yml") or {}).get("header_image")
+    spec = load_event().get("header_image")
     dest = OUT / "header.jpg"
-    if not spec:
+    if spec is None:
         dest.unlink(missing_ok=True)
         return 0
-    src = PHOTOS / "site" / spec["photo"]
+    src: Path = PHOTOS / "site" / spec["photo"]
     with Image.open(src) as im:
         width = min(HEADER_WIDTH, im.width)  # never upscale
-    img = crop_photo(src, (width, round(width / HEADER_RATIO)), tuple(spec.get("focus", DEFAULT_HEADER_FOCUS)))
+    img = crop_photo(
+        src,
+        (width, round(width / HEADER_RATIO)),
+        to_focus(spec.get("focus"), DEFAULT_HEADER_FOCUS),
+    )
     save_jpeg(img, dest)
-    print(f"  {rel(dest)}  ({dest.stat().st_size // 1024} KB, {img.width}x{img.height} from {rel(src)})")
+    print(
+        f"  {rel(dest)}  ({dest.stat().st_size // 1024} KB, {img.width}x{img.height} from {rel(src)})"
+    )
     return 1
 
 
 def committee() -> int:
-    members = (load_yaml(DATA / "committee.yml") or {}).get("members") or []
+    members = load_committee()["members"]
     out_dir = OUT / "committee"
     count = 0
     for m in members:
         dest = out_dir / f"{m['id']}.jpg"
-        photo = m.get("photo")
-        if photo:
-            src = PHOTOS / "committee" / photo
-            img = crop_photo(src, (COMMITTEE_SIZE, COMMITTEE_SIZE), tuple(m.get("photo_focus", DEFAULT_FOCUS)))
+        if "photo" in m:
+            src: Path = PHOTOS / "committee" / m["photo"]
+            img = crop_photo(
+                src,
+                (COMMITTEE_SIZE, COMMITTEE_SIZE),
+                to_focus(m.get("photo_focus"), DEFAULT_FOCUS),
+            )
             note = f"from {rel(src)}"
         else:
             img = initials_placeholder(m["name"], COMMITTEE_SIZE)
