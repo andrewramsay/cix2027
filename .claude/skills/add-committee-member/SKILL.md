@@ -20,6 +20,9 @@ All committee data is in `_data/committee.yml`: `roles` (the sections of the
    is unclear, ask. Add `url` if given. Don't invent details: if something
    required is missing, ask (or, with no one to ask, leave the person out and
    say why).
+   Only ever use the role(s) asked for. If one can't be used (e.g. it allows
+   one person, `multiple: false`, and is already held), don't put the person
+   in a different role instead: make no change, explain why, and ask what to do.
 4. Photo, if one was supplied:
    - Save the original unchanged as `photos/committee/<id>.<ext>` (lowercase
      extension). If it is a link (e.g. a GitHub issue attachment), download it:
