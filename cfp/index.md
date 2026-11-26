@@ -3,9 +3,11 @@ layout: page
 title: Call for papers
 ---
 
-# Call for Papers: The 1st Conference on Computational Interaction 2027 (CompInt’27)
+<div class="prose" markdown="1">
 
-## Cambridge, UK, June 2027
+## The 1st Conference on Computational Interaction 2027 (CompInt’27)
+
+### Cambridge, UK, June 2027
 
 The ACM Conference on Computational Interaction (CompInt) invites submissions for the papers track. CompInt will be launched in 2027 and aims to become the premier forum for research on computational models of human-computer interaction. 
 
@@ -43,3 +45,5 @@ We invite 4 (short) or 8 (long) page papers in the 2-column format (excluding re
 All contributions must be original. They cannot have been published in another peer-reviewed venue or be under review simultaneously. In addition, authors must avoid writing central parts of their manuscripts using LLMs. 
 
 All required materials must be submitted electronically by the abstract and paper deadline.
+
+</div>

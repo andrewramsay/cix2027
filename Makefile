@@ -17,6 +17,8 @@ build: images
 
 check: build
 
-# Local preview at http://localhost:4000 (re-run `make images` after changing photos or committee.yml)
+# Local preview at http://localhost:4000 (re-run `make images` after changing photos or committee.yml).
+# To view it from another machine, pick the address to listen on, e.g. `make serve HOST=0.0.0.0`.
+HOST ?= 127.0.0.1
 serve: images
-	bundle exec jekyll serve --livereload
+	bundle exec jekyll serve --livereload --host $(HOST)
