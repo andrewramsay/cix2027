@@ -27,11 +27,15 @@ All committee data is in `_data/committee.yml`: `roles` (the sections of the
    - Save the original unchanged as `photos/committee/<id>.<ext>` (lowercase
      extension). If it is a link (e.g. a GitHub issue attachment), download it:
      `curl -sSfL -o photos/committee/<id>.jpg "<url>"`.
-   - Set `photo: <id>.<ext>`. When replacing a photo, delete the old original.
+   - Set `photo: <id>.<ext>`.
+   - Adding a photo to an existing member who has none works the same way.
+   - Replacing a photo: if the old original has the same file name, the new
+     one simply overwrites it. Otherwise delete the old original with
+     `git rm photos/committee/<old file>` (plain `rm` may not be allowed).
 5. Run `make images` and look at `assets/images/generated/committee/<id>.jpg`.
    If the face is cut off, set `photo_focus: [x, y]` (0–1, default
    `[0.5, 0.35]`; lower y moves the crop up) and run again.
-6. Removing someone: delete their entry and their original photo.
+6. Removing someone: delete their entry and their original photo (with `git rm`).
 7. Run `make check` (or at least `make validate`) and fix any errors.
 8. Commit on a branch ("Add Jane Doe to committee as Local Chair") and open a
    pull request.
