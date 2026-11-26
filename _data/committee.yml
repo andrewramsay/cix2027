@@ -147,3 +147,9 @@ members:
     affiliation: University of Utah
     roles: [programme-committee]
     photo: yue-jiang.jpg
+
+  - id: test-person
+    name: Test Person
+    affiliation: University of Foobar
+    roles: [programme-committee]
+    photo: test-person.jpg
