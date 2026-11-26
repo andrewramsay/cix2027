@@ -3,6 +3,8 @@
 Built with Jekyll and [jekyll-theme-conference](https://github.com/DigitaleGesellschaft/jekyll-theme-conference) 5.4.x,
 deployed to GitHub Pages on every push to `main`.
 
+The `main` branch is protected from direct commits, create a PR for each change.
+
 ## Making changes
 
 Pick whichever suits you. All of them end in a pull request that is checked automatically;
