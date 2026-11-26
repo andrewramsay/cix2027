@@ -29,3 +29,60 @@
   aspect-ratio: 1;
   object-fit: cover;
 }
+
+// Long-form text pages (e.g. the call for papers). Wrap the page content in
+// <div class="prose" markdown="1"> ... </div> to use these styles.
+.prose {
+  max-width: 75ch;
+  line-height: 1.7;
+
+  p,
+  ul,
+  ol {
+    margin-bottom: 1.25rem;
+  }
+
+  li {
+    margin-bottom: 0.4rem;
+  }
+
+  h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    font-weight: 600;
+    color: var(--bs-primary);
+    border-bottom: 1px solid var(--bs-border-color);
+  }
+
+  h3 {
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+
+  // Full conference title and location at the top: a lead-in, not a section
+  > h2:first-child {
+    margin-top: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+    font-size: 1.5rem;
+    color: inherit;
+
+    + h3 {
+      margin-top: 0;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--bs-secondary-color);
+    }
+  }
+
+  // A paragraph that starts in bold (e.g. the desk-rejection notice) becomes a callout
+  p:has(> strong:first-child) {
+    padding: 1rem 1.25rem;
+    background: var(--bs-warning-bg-subtle);
+    border-left: 4px solid var(--bs-warning);
+    border-radius: var(--bs-border-radius);
+  }
+}
