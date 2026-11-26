@@ -5,7 +5,7 @@ title: Call for papers
 
 <div class="prose" markdown="1">
 
-## The 1st Conference on Computational Interaction 2027 (CompInt’27)
+## The 1st ACM Conference on Computational Interaction 2027 (CompInt’27)
 
 ### Cambridge, UK, June 2027
 
