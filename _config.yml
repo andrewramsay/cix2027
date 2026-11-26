@@ -53,8 +53,8 @@ defaults:
 # Theme settings, see https://github.com/DigitaleGesellschaft/jekyll-theme-conference
 conference:
   lang: en
-  # Off while there is no programme or rooms: the theme would otherwise show
-  # "schedule has no days" / "no rooms" warning bars on every page.
+  # Off while there are no speakers: the theme would otherwise show a
+  # "no speakers" warning bar on every page.
   show_errors: false
 
   navigation:
@@ -67,5 +67,18 @@ conference:
         relative_url: /cfp/
 
   talks:
-    tracks: []
+    # Colours of the timetable blocks and its legend (copied from the organisers'
+    # spreadsheet). A _talks/ file picks one with `track:`; blocks without one are white.
+    # Colours are Bootstrap names: primary, secondary, success, danger, warning, info, light, dark.
+    tracks:
+      - name: Whole symposium
+        color: danger
+      - name: Keynote (all)
+        color: primary
+      - name: Academics
+        color: warning
+      - name: Students
+        color: success
+      - name: Social
+        color: info
     tags: []
