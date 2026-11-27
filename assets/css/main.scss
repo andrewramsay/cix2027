@@ -106,8 +106,8 @@
   &::before {
     content: "";
     flex: none;
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 2.7rem;
+    height: 2.7rem;
     margin-right: 0.6rem;
     background: url("{{ site.baseurl }}/logos/compint_simple.png") center / contain no-repeat;
   }
@@ -129,11 +129,39 @@
   }
 }
 
-// Full logo above the title on the home page (set with `logo:` in index.md)
+// Home page: title and subtitle on the left, full logo on the right with its
+// base just above the horizontal rule (set with `logo:` in index.md).
+// On narrow screens the logo goes above the title instead.
+.home-title {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1.5rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.home-title-text {
+  min-width: 0;
+
+  // Drop the subtitle's bottom margin so the logo's base lines up with it
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
 .home-logo {
   display: block;
+  flex: none;
   width: 100%;
   max-width: 24rem;
   height: auto;
-  margin-bottom: 1.5rem;
+
+  @media (min-width: 768px) {
+    width: 18rem;
+    max-width: 35%;
+  }
 }
