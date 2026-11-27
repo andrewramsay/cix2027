@@ -1,10 +1,9 @@
 {% include header.html %}
 
   <div class="home-header bg-body-tertiary rounded p-4 p-md-5 mb-4">
-    {%- comment -%} CompInt: logo above the title (set `logo:` in index.md) {%- endcomment %}
-    {% if page.logo %}
-    <img src="{{ page.logo | prepend: site.baseurl }}" class="home-logo" alt="" />
-    {% endif %}
+    {%- comment -%} CompInt: title and subtitle on the left, logo on the right (set `logo:` in index.md) {%- endcomment %}
+    <div class="home-title">
+    <div class="home-title-text">
     <h1 class="display-3 text-break">
       {% if page.header.img %}
         {%- comment -%} One image, the dark variant only downloaded in dark mode {%- endcomment %}
@@ -22,6 +21,11 @@
     </h1>
     {%- comment -%} CompInt: subtitle with both editions from _data/event.yml {%- endcomment %}
     {% include event_subtitle.html %}
+    </div>
+    {% if page.logo %}
+    <img src="{{ page.logo | prepend: site.baseurl }}" class="home-logo" alt="" />
+    {% endif %}
+    </div>
 
     <hr class="my-4">
 
