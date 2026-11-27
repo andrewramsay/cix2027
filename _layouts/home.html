@@ -1,6 +1,10 @@
 {% include header.html %}
 
   <div class="home-header bg-body-tertiary rounded p-4 p-md-5 mb-4">
+    {%- comment -%} CompInt: logo above the title (set `logo:` in index.md) {%- endcomment %}
+    {% if page.logo %}
+    <img src="{{ page.logo | prepend: site.baseurl }}" class="home-logo" alt="" />
+    {% endif %}
     <h1 class="display-3 text-break">
       {% if page.header.img %}
         {%- comment -%} One image, the dark variant only downloaded in dark mode {%- endcomment %}
