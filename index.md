@@ -1,5 +1,7 @@
 ---
 layout: home
+# Full logo shown above the title (file in logos/)
+logo: /logos/compint_full.png
 links:
   - name: Call for papers
     relative_url: /cfp/

@@ -96,3 +96,44 @@
 .program-table-container {
   scroll-padding-left: 0;
 }
+
+// Logos (originals in logos/, served as they are)
+// Small logo to the left of the site title in the navigation bar
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+
+  &::before {
+    content: "";
+    flex: none;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-right: 0.6rem;
+    background: url("{{ site.baseurl }}/logos/compint_simple.png") center / contain no-repeat;
+  }
+}
+
+// In dark mode the logos' dark lettering would vanish, so give them a light backing
+[data-bs-theme="dark"] {
+  .navbar-brand::before {
+    background-color: #fff;
+    background-origin: content-box;
+    padding: 0.15rem;
+    border-radius: var(--bs-border-radius-sm);
+  }
+
+  .home-logo {
+    padding: 0.75rem 1rem;
+    background: #fff;
+    border-radius: var(--bs-border-radius);
+  }
+}
+
+// Full logo above the title on the home page (set with `logo:` in index.md)
+.home-logo {
+  display: block;
+  width: 100%;
+  max-width: 24rem;
+  height: auto;
+  margin-bottom: 1.5rem;
+}

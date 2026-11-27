@@ -38,7 +38,8 @@ because the theme requires it); don't add them unless asked.
 | Timetable colours and legend | `conference.talks.tracks` in `_config.yml` |
 | Call for papers | `cfp/index.md` |
 | Navigation bar, site title, theme settings | `_config.yml` |
-| Custom CSS (incl. the home banner) | `assets/css/main.scss` |
+| Custom CSS (incl. the home banner and logos) | `assets/css/main.scss` |
+| Logos (nav bar logo set in `main.scss`, home page logo via `logo:` in `index.md`) | `logos/` |
 
 Generated, never edit or commit: `assets/images/generated/` (made by
 `scripts/process_images.py` from `photos/`), `_site/`.
