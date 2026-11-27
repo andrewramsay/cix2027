@@ -5,11 +5,11 @@ title: Call for papers
 
 <div class="prose" markdown="1">
 
-## The 1st ACM Conference on Computational Interaction 2027 (CompInt’27)
+## The 1st Conference on Computational Interaction 2027 (CompInt’27)
 
 ### Cambridge, UK, June 2027
 
-The ACM Conference on Computational Interaction (CompInt) invites submissions for the papers track. CompInt will be launched in 2027 and aims to become the premier forum for research on computational models of human-computer interaction. 
+The Conference on Computational Interaction (CompInt) invites submissions for the papers track. CompInt will be launched in 2027 and aims to become the premier forum for research on computational models of human-computer interaction. 
 
 Building on the success of a decade of the summer school on Computational Interaction and recent symposium, CompInt brings together people who care about computationally implementable methods and models that represent interaction, drive adaptation, support the engineering and design of interactive systems, and provide fundamental insights into interaction. The program is built to engage deeply on each paper contribution and provide opportunities to discuss with world-class students and scholars in the area. 
 
@@ -40,7 +40,7 @@ We invite theoretical contributions as well as traditional systems-focused or em
  
 ## Submissions
 
-We invite 4 (short) or 8 (long) page papers in the 2-column format (excluding references) of the ACM, without appendices. We strongly encourage open science practices and the submission of supplementary code and data; consideration will be given to the availability of such materials in reviewing. Papers will be reviewed by an expert programme committee and external reviewers.
+We invite 4 (short) or 8 (long) page papers in a 2-column format (excluding references), without appendices. We strongly encourage open science practices and the submission of supplementary code and data; consideration will be given to the availability of such materials in reviewing. Papers will be reviewed by an expert programme committee and external reviewers.
 
 All contributions must be original. They cannot have been published in another peer-reviewed venue or be under review simultaneously. In addition, authors must avoid writing central parts of their manuscripts using LLMs. 
 

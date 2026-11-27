@@ -1,6 +1,6 @@
 # CompInt’27 website
 
-Jekyll site for CompInt’27, the ACM Conference on Computational Interaction
+Jekyll site for CompInt’27, the 1st Conference on Computational Interaction
 (held with the Summer School on Computational Interaction), built on the
 [jekyll-theme-conference](https://github.com/DigitaleGesellschaft/jekyll-theme-conference)
 gem (pinned to 5.4.x, Bootstrap 5) and deployed to GitHub Pages by `.github/workflows/site.yml`.

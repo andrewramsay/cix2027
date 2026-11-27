@@ -9,5 +9,5 @@ links:
 
 {% include event_facts.html %}
 
-The 1st ACM Conference on Computational Interaction (CompInt) brings together
+The 1st Conference on Computational Interaction (CompInt) brings together
 students and researchers working on computational approaches to human-computer interaction.
