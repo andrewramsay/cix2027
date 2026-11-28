@@ -14,17 +14,17 @@ roles:
   - id: general-chair
     title: General Chair
     multiple: false
+  - id: technical-programme-chair
+    title: Technical Programme Chairs
   - id: local-chair
     title: Local Chairs
   - id: summer-school-chair
     title: Summer School Chairs
-  - id: technical-programme-chair
-    title: Technical Programme Chairs
   - id: session-chair
     title: Session Chair
     multiple: false
-  - id: publications-chair
-    title: Publications Chairs
+  - id: proceedings-chair
+    title: Proceedings Chairs
   - id: web-chair
     title: Web Chair
     multiple: false
@@ -85,12 +85,12 @@ members:
   - id: sven-mayer
     name: Sven Mayer
     affiliation: TU Dortmund
-    roles: [publications-chair]
+    roles: [proceedings-chair]
 
   - id: florian-fischer
     name: Florian Fischer
     affiliation: University of Cambridge
-    roles: [publications-chair]
+    roles: [proceedings-chair]
 
   - id: andrew-ramsay
     name: Andrew Ramsay

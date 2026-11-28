@@ -1,5 +1,5 @@
 ---
 name: Talks
-track: Whole symposium
+track: Talks
 hide: true
 ---

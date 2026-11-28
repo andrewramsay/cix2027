@@ -1,5 +1,5 @@
 ---
 name: Workshop / review
-track: Students
+track: Discussions
 hide: true
 ---

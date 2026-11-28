@@ -73,14 +73,14 @@ conference:
     # spreadsheet). A _talks/ file picks one with `track:`; blocks without one are white.
     # Colours are Bootstrap names: primary, secondary, success, danger, warning, info, light, dark.
     tracks:
-      - name: Whole symposium
-        color: danger
-      - name: Keynote (all)
+      - name: Keynote
         color: primary
-      - name: Academics
-        color: warning
-      - name: Students
+      - name: Talks
+        color: danger
+      - name: Discussions
         color: success
+      - name: Teaching
+        color: warning
       - name: Social
         color: info
     tags: []

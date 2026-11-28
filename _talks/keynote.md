@@ -1,5 +1,5 @@
 ---
 name: Keynote
-track: Keynote (all)
+track: Keynote
 hide: true
 ---
