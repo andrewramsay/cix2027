@@ -16,10 +16,10 @@
   name: S³CIX 2026
   host: University of Glasgow
   location: Glasgow, UK
-  website: https://s3cix.computationalinteraction.org/
+  website: https://andrewramsay.github.io/cix2026/
   logos:
     - file: s3cix.png
-      url: https://s3cix.computationalinteraction.org/
+      url: https://andrewramsay.github.io/cix2026/
       alt: S³CIX logo
 
 - year: 2025
