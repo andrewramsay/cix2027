@@ -4,7 +4,7 @@ description: >-
   Conference on Computational Interaction (CompInt) and Summer School on
   Computational Interaction
 preposition: "at"
-url: ""      # TODO: set to the custom domain once it is pointed at GitHub Pages
+url: "https://compint27.computationalinteraction.org"
 baseurl: ""
 timezone: Europe/London
 theme: jekyll-theme-conference
