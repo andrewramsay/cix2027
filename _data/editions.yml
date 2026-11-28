@@ -1,0 +1,107 @@
+# Previous editions of the event, shown on the History page (newest first,
+# whatever order they are listed in here).
+# Checked by scripts/validate.py against schemas/editions.schema.json.
+#
+# Each edition has:
+#   year      the year it was held
+#   name      optional, shown above the host (e.g. the event's own name)
+#   host      the host institution(s)
+#   location  city and country
+#   website   optional, the edition's own website
+#   logos     one or more logos; file is a file name in logos/editions/,
+#             url is where clicking the logo goes (optional)
+# Earlier editions were copied from https://s3cix.computationalinteraction.org/editions/
+
+- year: 2026
+  name: S³CIX 2026
+  host: University of Glasgow
+  location: Glasgow, UK
+  website: https://s3cix.computationalinteraction.org/
+  logos:
+    - file: s3cix.png
+      url: https://s3cix.computationalinteraction.org/
+      alt: S³CIX logo
+
+- year: 2025
+  host: Sorbonne University
+  location: Paris, France
+  website: https://cixschool2025.isir.upmc.fr/
+  logos:
+    - file: sorbonne.png
+      url: https://www.sorbonne-universite.fr/en
+      alt: Sorbonne University logo
+
+- year: 2024
+  host: University of Luxembourg
+  location: Belval, Luxembourg
+  website: https://cixschool2024.uni.lu/
+  logos:
+    - file: luxembourg.png
+      url: https://www.uni.lu/en/
+      alt: University of Luxembourg logo
+
+- year: 2023
+  host: University of Michigan
+  location: Ann Arbor, Michigan, USA
+  website: https://cixschool2023.engin.umich.edu/
+  logos:
+    - file: michigan.png
+      url: https://umich.edu/
+      alt: University of Michigan logo
+
+- year: 2022
+  host: Saarland University / Max-Planck Institute for Informatics
+  location: Saarbrücken, Germany
+  website: https://cixschool2022.cs.uni-saarland.de/
+  logos:
+    - file: saarland.png
+      url: https://www.uni-saarland.de/en/home.html
+      alt: Saarland University logo
+    - file: mp.png
+      url: https://www.mpg.de/152494/informatics
+      alt: Max-Planck Institute for Informatics logo
+
+- year: 2019
+  host: Columbia University
+  location: New York, USA
+  website: https://docs.google.com/document/d/1fcpCYzZ6Bs-22URoQk7Q9S7YVBBmjJ91WdoaqXMzZN4/edit?tab=t.0
+  logos:
+    - file: columbia.png
+      url: https://www.columbia.edu/
+      alt: Columbia University logo
+
+- year: 2018
+  host: Cambridge University
+  location: Cambridge, UK
+  website: https://www.dcs.gla.ac.uk/~jhw/computationalinteraction/chi2018/
+  logos:
+    - file: cambridge.png
+      url: https://www.cam.ac.uk/
+      alt: Cambridge University logo
+
+- year: 2017
+  host: ETH Zurich
+  location: Zurich, Switzerland
+  website: https://github.com/eth-ait/ComputationalInteraction17
+  logos:
+    - file: eth.png
+      url: https://ethz.ch/en.html
+      alt: ETH Zurich logo
+
+- year: 2016
+  host: Aalto University
+  location: Helsinki, Finland
+  website: https://userinterfaces.aalto.fi/computationalinteraction/
+  logos:
+    - file: aalto.png
+      url: https://aalto.fi
+      alt: Aalto University logo
+
+- year: 2015
+  host: School of Computing Science, University of Glasgow
+  location: Glasgow, UK
+  website: https://www.dcs.gla.ac.uk/~jhw/computational_interaction
+  logos:
+    - file: uofg.jpg
+      url: https://www.dcs.gla.ac.uk
+      alt: University of Glasgow logo

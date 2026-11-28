@@ -65,6 +65,8 @@ conference:
         relative_url: /timetable/
       - name: Call for papers
         relative_url: /cfp/
+      - name: History
+        relative_url: /history/
 
   talks:
     # Colours of the timetable blocks and its legend (copied from the organisers'

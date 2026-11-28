@@ -11,7 +11,7 @@ Keep explanations short and non-technical, and always say what you changed.
 ## Current scope
 
 A minimal pre-announcement site: a home page (banner photo, dates/location,
-intro text), a committee page, a call-for-papers page whose text the organisers
+intro text), a committee page, a history page of past editions, a call-for-papers page whose text the organisers
 write themselves, and a timetable page showing the outline schedule as a grid.
 
 The timetable uses the theme's programme feature in a simplified way: the two
@@ -37,6 +37,7 @@ because the theme requires it); don't add them unless asked.
 | Timetable blocks (name, colour) and columns | `_talks/`, `_rooms/` |
 | Timetable colours and legend | `conference.talks.tracks` in `_config.yml` |
 | Call for papers | `cfp/index.md` |
+| History page (past editions, newest first) | `_data/editions.yml` (schema: `schemas/editions.schema.json`), logos in `logos/editions/`, page `history/index.md`, rendered by `_includes/editions.html` |
 | Navigation bar, site title, theme settings | `_config.yml` |
 | Custom CSS (incl. the home banner and logos) | `assets/css/main.scss` |
 | Logos (nav bar logo set in `main.scss`, home page logo via `logo:` in `index.md`) | `logos/` |
