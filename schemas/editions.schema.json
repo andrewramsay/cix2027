@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "_data/editions.yml",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["year", "host", "location", "logos"],
+    "properties": {
+      "year": {"type": "integer", "minimum": 2000, "maximum": 2100},
+      "name": {"type": "string"},
+      "host": {"type": "string"},
+      "location": {"type": "string"},
+      "website": {"type": "string", "format": "uri"},
+      "logos": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["file", "alt"],
+          "properties": {
+            "file": {"type": "string", "pattern": "^[^/\\\\]+$"},
+            "url": {"type": "string", "format": "uri"},
+            "alt": {"type": "string"}
+          }
+        }
+      }
+    }
+  }
+}

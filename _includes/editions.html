@@ -1,0 +1,31 @@
+{%- comment -%}
+  Previous editions from _data/editions.yml, newest first. Logos are served
+  as they are from logos/editions/.
+{%- endcomment -%}
+{%- assign editions = site.data.editions | sort: "year" | reverse -%}
+<div class="editions">
+  {%- for edition in editions %}
+  <div class="row align-items-center py-3 border-bottom edition">
+    <div class="col-md-5 text-center text-md-start mb-3 mb-md-0">
+      <h2 class="h3 mb-1">{{ edition.year }}</h2>
+      {%- if edition.name %}
+      <div class="fw-semibold">{{ edition.name | escape }}</div>
+      {%- endif %}
+      <div>{{ edition.host | escape }}</div>
+      <div class="fst-italic text-body-secondary">{{ edition.location | escape }}</div>
+      {%- if edition.website %}
+      <a href="{{ edition.website }}">Website</a>
+      {%- endif %}
+    </div>
+    <div class="col-md-7 d-flex flex-wrap justify-content-center justify-content-md-end gap-3">
+      {%- for logo in edition.logos %}
+      <div class="edition-logo bg-white rounded border">
+        {%- if logo.url -%}<a href="{{ logo.url }}">{%- endif -%}
+        <img src="{{ site.baseurl }}/logos/editions/{{ logo.file }}" alt="{{ logo.alt | escape }}" loading="lazy">
+        {%- if logo.url -%}</a>{%- endif -%}
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+  {%- endfor %}
+</div>

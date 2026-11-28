@@ -257,9 +257,31 @@ def check_committee() -> None:
     check_unused_photos(PHOTOS / "committee", used_photos)
 
 
+def check_editions() -> None:
+    path = DATA / "editions.yml"
+    data = load(path)
+    if data is _FAILED:
+        return
+    check_schema(data, "editions.schema.json", path)
+    folder = PHOTOS.parent / "logos" / "editions"
+    used: set[str] = set()
+    years: set[object] = set()
+    for edition in (as_dict(x) for x in as_list(data)):
+        year = edition.get("year")
+        if year in years:
+            error(f"year {year} is listed more than once", path)
+        years.add(year)
+        for logo in (as_dict(x) for x in as_list(edition.get("logos"))):
+            if isinstance(file := logo.get("file"), str):
+                used.add(file)
+                check_photo(f"{year}", file, folder, path)
+    check_unused_photos(folder, used)
+
+
 def main() -> int:
     check_event()
     check_committee()
+    check_editions()
     print(f"validate: {errors} error(s), {warnings} warning(s)")
     return 1 if errors > 0 else 0
 
